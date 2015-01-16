@@ -6,12 +6,11 @@ describe Peep do
 
     it 'should be created and then retrieved from the db' do
       expect(Peep.count).to eq(0)
-      Peep.create(name: 'Bibiana Cristòfol Amat',
-                  user_name: 'BibsBcn')
+      Peep.create(content: 'Hello world!',
+                  user_id: '1')
       expect(Peep.count).to eq(1)
       peep = Peep.first
-      expect(peep.name).to eq('Bibiana Cristòfol Amat')
-      expect(peep.user_name).to eq('BibsBcn')
+      expect(peep.content).to eq('Hello world!')
       peep.destroy
       expect(Peep.count).to eq(0)
     end
