@@ -18,6 +18,12 @@ class Chitter < Sinatra::Base
     erb :index
   end
 
+  post '/peeps' do
+    content = params["content"]
+    Peep.create(:content => content)
+    redirect to('/')
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end

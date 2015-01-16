@@ -3,3 +3,10 @@
     <li><%= peep.content %></li>
   <% end %>
 </ul>
+
+<div id="new-peep">
+  <form action="/peeps" method="post">
+    <input type="text" name="content">
+    <input type="submit" value="Peep!">
+  </form>
+</div>
