@@ -12,6 +12,8 @@ feature 'User signs up' do
 
   scenario 'with a password that doesn\'t match' do
     expect{ sign_up('B', 'bib', 'b@b.org', 'pass', 'wrong') }.to change(User, :count).by(0)
+    expect(current_path).to eq('/users')
+    expect(page).to have_content("Sorry, your passwords don't match")
   end
 
   def sign_up(name = "Bibiana Cristòfol Amat",
