@@ -9,7 +9,7 @@ class User
   validates_confirmation_of :password
 
   property :id,              Serial
-  property :name,            String
+  property :name,            String, :unique => true, :message => "This user name is already registered"
   property :user_name,       String
   property :email,           String, :unique => true, :message => "This email is already registered"
   property :password_digest, Text

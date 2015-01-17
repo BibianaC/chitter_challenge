@@ -22,6 +22,12 @@ feature 'User signs up' do
     expect(page).to have_content("This email is already registered")
   end
 
+  scenario 'with a user name that is already registered' do
+    expect{ sign_up }.to change(User, :count).by(1)
+    expect{ sign_up }.to change(User, :count).by(0)
+    expect(page).to have_content("This user name is already registered")
+  end
+
   def sign_up(name = "Bibiana Cristòfol Amat",
               user_name = "BibsBcn",
               email = "test@test.org",
