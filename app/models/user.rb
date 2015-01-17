@@ -11,7 +11,7 @@ class User
   property :id,              Serial
   property :name,            String
   property :user_name,       String
-  property :email,           String
+  property :email,           String, :unique => true, :message => "This email is already registered"
   property :password_digest, Text
 
   has n, :peeps, :through => Resource
