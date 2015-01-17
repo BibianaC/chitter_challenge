@@ -1,6 +1,9 @@
 require 'spec_helper'
+require_relative 'helpers/session'
 
 feature 'User signs up' do
+
+  include SessionHelpers
 
   scenario 'when being a new user visiting the site' do
     expect { sign_up }.to change(User, :count).by(1)
@@ -28,24 +31,11 @@ feature 'User signs up' do
     expect(page).to have_content("This user name is already registered")
   end
 
-  def sign_up(name = "Bibiana Cristòfol Amat",
-              user_name = "BibsBcn",
-              email = "test@test.org",
-              password = "12345",
-              password_confirmation = "12345")
-    visit '/users/new'
-    expect(page.status_code).to eq(200)
-    fill_in :name, :with => name
-    fill_in :user_name, :with => user_name
-    fill_in :email, :with => email
-    fill_in :password, :with => password
-    fill_in :password_confirmation, :with => password_confirmation
-    click_button "Sign up"
-  end
-
 end
 
 feature 'User logs in' do
+
+  include SessionHelpers
 
   before(:each) do
     User.create(:name => 'Bibiana Cristòfol Amat',
@@ -69,12 +59,27 @@ feature 'User logs in' do
     expect(page).not_to have_content("Welcome, Bibiana Cristòfol Amat")
   end
 
-  def log_in(email, password)
-    visit '/sessions/new'
-    fill_in :email, :with => email
-    fill_in :password, :with => password
-    click_button 'Log in'
+end
+
+feature 'User logs out' do
+
+  include SessionHelpers
+
+  before(:each) do
+    User.create(:name => 'Bibiana Cristòfol Amat',
+                :user_name => 'BibsBcn',
+                :email => "test@test.org",
+                :password => '12345',
+                :password_confirmation => '12345')
   end
+
+  scenario 'while being logeded in' do
+    log_in('test@test.org', '12345')
+    click_button "Log out"
+    expect(page).to have_content("Good bye!")
+    expect(page).not_to have_content("Welcome, Bibiana Cristòfol Amat")
+  end
+
 
 end
 
