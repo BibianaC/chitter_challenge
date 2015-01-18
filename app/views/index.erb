@@ -1,9 +1,9 @@
 <section class="content">
   <% @peeps.reverse.each do |peep| %>
     <% user = User.get(peep.user_id) %>
-    <%= user.name %>
-    <%= user.user_name %>
-    <%= peep.timestamp.strftime("%d %b") %></br>
+    <span id="name"><%= user.name %></span>
+    <span id="user_name_time"><%= user.user_name %> · </span>
+    <span id="user_name_time"><%= peep.timestamp.strftime("%d %b") %></span></br>
     <%= peep.content %></br>
   <% end %>
 </section>
