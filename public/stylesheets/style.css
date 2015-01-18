@@ -63,17 +63,17 @@ header .button {
   margin-bottom: 1000px;
 }
 
-/*---------
-  SIGN UP
------------*/
+/*------------------
+  SIGN UP & LOG IN
+------------------*/
 
-.new_user {
+#new_user_session {
   color: #FFEBCD;
   text-align: center;
   margin-top: 20px;
 }
 
-.new_user #placeholder {
+#new_user_session #placeholder {
   border-radius: 5%;
   text-align: center;
   width: 400px;
@@ -84,7 +84,7 @@ header .button {
   margin-bottom: .5em;
 }
 
-.new_user #submit {
+#new_user_session #submit {
   margin-top: 10px;
   border-radius: 5%;
   text-align: center;
