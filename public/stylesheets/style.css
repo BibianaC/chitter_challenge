@@ -34,6 +34,12 @@ header .button {
   color: #FFEBCD;
 }
 
+header .welcome {
+  color: #FF8C00;
+  text-align: right;
+  margin-top: 20px;
+}
+
 /*---------
   PEEPS
 -----------*/
