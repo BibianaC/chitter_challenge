@@ -4,7 +4,8 @@ feature 'User browses the list of links' do
   
   before (:each) {
     Peep.create(:content => 'Hello World!',
-                :user_id => '1')
+                :user_id => '1',
+                :timestamp => '18 jan')
   }
 
   scenario 'when opening the home page' do

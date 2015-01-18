@@ -1,15 +1,17 @@
 <body>
   <div><a id="logo" href="/">Chitter</div>
-  <a href="/peeps/new">Peep!</a>
+  
   <% if current_user %>
     Welcome, <%= current_user.name %>
      <form method="post" action="/sessions">
       <input type="hidden" name="_method" value="delete">
       <input type="submit" value="Log out">
     </form>
+    <a href="/peeps/new">Peep!</a>
   <% else %>
     <a href='/users/new' id='sign-up' class='button'>Sign up</a>
     <a href='/sessions/new' id='log-in' class='button'>Log in</a>
+
   <% end %>
 
   <% if flash[:errors] && !flash[:errors].empty? %>

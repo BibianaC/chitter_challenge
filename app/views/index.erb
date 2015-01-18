@@ -1,6 +1,7 @@
-<ul>
+<section>
   <% @peeps.each do |peep| %>
-    <li><%= peep.content %></li>
+    <%= peep.timestamp.strftime("%d %b") %></br>
+    <%= peep.content %></br>
   <% end %>
-</ul>
+</section>
 
