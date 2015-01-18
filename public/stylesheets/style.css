@@ -1,5 +1,6 @@
 body {
   font-family: Helvetica, Arial, sans-serif;
+  background-image: url(/images/footer_lodyas.png);
 }
 
 header {
@@ -27,4 +28,15 @@ header .button {
   background-color: #FF8C00;
   border-radius: 50%;
   color: #FFEBCD;
+}
+
+.content {
+  display: block;
+  border-radius: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  padding: 10px;
+  width: 600px;
+  background-color: #FAF0E6;
 }
