@@ -29,6 +29,10 @@ class Chitter < Sinatra::Base
     redirect to('/')
   end
 
+  get '/peeps/new' do
+    erb:"peeps/new"
+  end
+
   get '/users/new' do
     @user = User.new
     erb :"users/new"
