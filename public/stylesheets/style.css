@@ -73,13 +73,13 @@ header .welcome {
   SIGN UP & LOG IN
 ------------------*/
 
-#new_user_session {
+#new {
   color: #FFEBCD;
   text-align: center;
   margin-top: 20px;
 }
 
-#new_user_session #placeholder {
+#new #placeholder {
   border-radius: 5%;
   text-align: center;
   width: 400px;
@@ -90,11 +90,34 @@ header .welcome {
   margin-bottom: .5em;
 }
 
-#new_user_session #submit {
+#new #submit {
   margin-top: 10px;
   border-radius: 5%;
   text-align: center;
   width: 415px;
+  background-color: #FF8C00;
+  font-size: 15px;
+  padding: .4em;
+  color: #FFEBCD;
+}
+
+#new  #content {
+  border-radius: 5%;
+  width: 300px;
+  height: 50px; 
+  background-color: #FAF0E6;
+  font-size: 15px;
+  padding: .3em;
+  color: #000000;
+  margin-bottom: .5em;
+  text-align: top;
+}
+
+#new #peep_submit {
+  margin-top: 10px;
+  border-radius: 5%;
+  text-align: center;
+  width: 215px;
   background-color: #FF8C00;
   font-size: 15px;
   padding: .4em;
