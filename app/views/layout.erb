@@ -9,20 +9,24 @@
   </head>
 
   <body>
-    <div><a id="logo" href="/">Chitter</div>
-    
-    <% if current_user %>
-      Welcome, <%= current_user.name %>
-       <form method="post" action="/sessions">
-        <input type="hidden" name="_method" value="delete">
-        <input type="submit" value="Log out">
-      </form>
-      <a href="/peeps/new">Peep!</a>
-    <% else %>
-      <a href='/users/new' id='sign-up' class='button'>Sign up</a>
-      <a href='/sessions/new' id='log-in' class='button'>Log in</a>
 
-    <% end %>
+    <header>
+
+      <a href="/"><img id="logo" src='/images/chitter_logo.png'></a>
+      
+      <% if current_user %>
+        Welcome, <%= current_user.name %>
+         <form method="post" action="/sessions">
+          <input type="hidden" name="_method" value="delete">
+          <input type="submit" value="Log out">
+        </form>
+        <a href="/peeps/new">Peep!</a>
+      <% else %>
+        <a href='/users/new' id='sign-up' class='button'>Sign up</a>
+        <a href='/sessions/new' id='log-in' class='button'>Log in</a>
+      <% end %>
+
+    </header>
 
     <% if flash[:errors] && !flash[:errors].empty? %>
       Sorry, there were the following problems with the form:
