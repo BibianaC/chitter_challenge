@@ -14,6 +14,7 @@ class Chitter < Sinatra::Base
 
   enable :sessions
   set :session_secret, 'super secret'
+  set :public, Proc.new{ File.join(root, "..", "public") }
 
   use Rack::Flash
   use Rack::MethodOverride

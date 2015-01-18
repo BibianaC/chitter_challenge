@@ -1,34 +1,46 @@
-<body>
-  <div><a id="logo" href="/">Chitter</div>
-  
-  <% if current_user %>
-    Welcome, <%= current_user.name %>
-     <form method="post" action="/sessions">
-      <input type="hidden" name="_method" value="delete">
-      <input type="submit" value="Log out">
-    </form>
-    <a href="/peeps/new">Peep!</a>
-  <% else %>
-    <a href='/users/new' id='sign-up' class='button'>Sign up</a>
-    <a href='/sessions/new' id='log-in' class='button'>Log in</a>
+<!DOCTYPE html>
 
-  <% end %>
+<html>
 
-  <% if flash[:errors] && !flash[:errors].empty? %>
-    Sorry, there were the following problems with the form:
-    <ul id="errors">
-      <% flash[:errors].each do |error| %>
-        <li><%= error %></li>
-      <% end %>
-    </ul>
-  <% end %>
+  <head>
+    <title>Chitter</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/reset.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+  </head>
 
-  <% if flash[:notice] %>
-      <div id="notice">
-        <%= flash[:notice] %>
-      </div>
-  <% end %>
+  <body>
+    <div><a id="logo" href="/">Chitter</div>
+    
+    <% if current_user %>
+      Welcome, <%= current_user.name %>
+       <form method="post" action="/sessions">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Log out">
+      </form>
+      <a href="/peeps/new">Peep!</a>
+    <% else %>
+      <a href='/users/new' id='sign-up' class='button'>Sign up</a>
+      <a href='/sessions/new' id='log-in' class='button'>Log in</a>
 
-  <%= yield %>
+    <% end %>
 
-</body>
+    <% if flash[:errors] && !flash[:errors].empty? %>
+      Sorry, there were the following problems with the form:
+      <ul id="errors">
+        <% flash[:errors].each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    <% end %>
+
+    <% if flash[:notice] %>
+        <div id="notice">
+          <%= flash[:notice] %>
+        </div>
+    <% end %>
+
+    <%= yield %>
+
+  </body>
+
+</html>
