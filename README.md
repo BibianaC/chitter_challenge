@@ -4,10 +4,10 @@
 ## Screenshot
 
 <div align="center">
-  <img width="80%" src="images/screenshots/front.png">
+  <img width="80%" src="public/images/screenshots/front.png">
 </div>
 <div align="center">
-  <img width="80%" src="images/screenshots/sign_up.png">
+  <img width="80%" src="public/images/screenshots/sign_up.png">
 </div>
 
 # Task
