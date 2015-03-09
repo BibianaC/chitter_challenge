@@ -1,6 +1,15 @@
 
 ## Challenge: Chitter
 
+## Screenshot
+
+<div align="center">
+  <img width="80%" src="images/screenshots/front.png">
+</div>
+<div align="center">
+  <img width="80%" src="images/screenshots/sign_up.png">
+</div>
+
 # Task
 
 Write a little Twitter clone that will allow the users to post messages to a public stream.
@@ -23,23 +32,14 @@ Write a little Twitter clone that will allow the users to post messages to a pub
 - You don't have to be logged in to see the peeps.
 - You only can peep if you are logged in.
 
-# Bonus
-
-If you have time you can implement the following:
-
-  - In order to start a conversation as a maker I want to reply to a peep from another maker.
-
-And/Or:
-
-  - Work on the css to make it look good (we all like beautiful things).
-
-
 ## Context
 
 Week 4 challenge at Makers Academy
 
 ## Resources
 
+- Ruby
+- Sinatra
 - Bundle
 - Capybara
 - Cucumber
@@ -47,8 +47,6 @@ Week 4 challenge at Makers Academy
 - IRB
 - Rackup
 - Rspec
-- Ruby
-- Sinatra
 - Shotgun
 
 ## Contributors
